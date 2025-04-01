@@ -17,7 +17,7 @@ Resources:
   GetProductsFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: functions/get-products/
+      CodeUri: functions/products/get-products/
       Events:
         Api:
           Type: HttpApi
@@ -33,10 +33,29 @@ Resources:
     Metadata:
       BuildMethod: makefile
 
+  GetUsersFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: functions/user/get-products/
+      Events:
+        Api:
+          Type: HttpApi
+          Properties:
+            Path: /user/
+            Method: GET
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action: dynamodb:Scan
+              Resource: !GetAtt Table.Arn
+    Metadata:
+      BuildMethod: makefile
+
   GetProductFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: functions/get-product/
+      CodeUri: functions/products/get-product/
       Events:
         Api:
           Type: HttpApi
@@ -55,7 +74,7 @@ Resources:
   DeleteProductFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: functions/delete-product/
+      CodeUri: functions/products/delete-product/
       Events:
         Api:
           Type: HttpApi
@@ -74,7 +93,7 @@ Resources:
   PutProductFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: functions/put-product/
+      CodeUri: functions/products/put-product/
       Events:
         Api:
           Type: HttpApi
@@ -93,7 +112,7 @@ Resources:
   DDBStreamsFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: functions/products-stream/
+      CodeUri: functions/products/products-stream/
       Timeout: 10
       Events:
         TableStream:

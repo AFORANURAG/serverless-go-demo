@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"log"
 
-	"github.com/aws-samples/serverless-go-demo/domain"
+	domain "github.com/aws-samples/serverless-go-demo/domain/products"
 	"github.com/aws-samples/serverless-go-demo/types"
 	"github.com/aws/aws-lambda-go/events"
 )

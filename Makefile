@@ -1,6 +1,6 @@
 STACK_NAME ?= serverless-go-demo
 FUNCTIONS := get-products get-product put-product delete-product products-stream
-REGION := eu-central-1
+REGION := ap-south-1
 
 # To try different version of Go
 GO := go

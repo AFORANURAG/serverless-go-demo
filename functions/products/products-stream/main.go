@@ -7,8 +7,8 @@ import (
 	"github.com/aws/aws-lambda-go/lambda"
 
 	"github.com/aws-samples/serverless-go-demo/bus"
-	"github.com/aws-samples/serverless-go-demo/domain"
-	"github.com/aws-samples/serverless-go-demo/handlers"
+	domain "github.com/aws-samples/serverless-go-demo/domain/products"
+	handlers "github.com/aws-samples/serverless-go-demo/handlers/products"
 )
 
 func main() {

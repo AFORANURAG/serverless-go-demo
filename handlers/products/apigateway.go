@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/aws-samples/serverless-go-demo/domain"
+	domain "github.com/aws-samples/serverless-go-demo/domain/products"
 
 	"github.com/aws/aws-lambda-go/events"
 )
